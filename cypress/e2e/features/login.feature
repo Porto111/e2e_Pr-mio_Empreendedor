@@ -6,6 +6,7 @@ Funcionalidade realizar login no sistema Sabesp
     When inserir meu usuario "<user>" e senha "<senha>"
     And clicar no botao acessar
     Then sou direcionado para a home logada
+    And fecho a janela de informações
 
     Examples:
       | cenario           | user             | senha    |

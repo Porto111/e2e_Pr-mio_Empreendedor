@@ -16,6 +16,4 @@ class HomeElelements{
     menuAdmDataLiberacao = () => {return 'a[data-testid="contest-administration"]'}
     menuAdmResultados = () => {return 'a[data-testid="results"]'}
 
-
-
 } export default HomeElelements
