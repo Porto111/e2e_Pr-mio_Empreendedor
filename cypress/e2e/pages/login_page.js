@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 import LoginElements from "../elements/login_elements.js"
-import HomeElelements from "../elements/home_elements.js"
+import HomeUserElelements from "../elements/homeUser_elements.js"
 
 const loginElements = new LoginElements
-const homeElements = new HomeElelements
+const homeElements = new HomeUserElelements
 
 const url = Cypress.config('baseUrl')
 

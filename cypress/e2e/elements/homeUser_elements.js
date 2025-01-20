@@ -11,9 +11,10 @@ class HomeElelements{
     telaCadastrarTrabalho = () => {return 'a[data-testid="register-work"]'}
     administracaoMenu = () => {return 'span', 'Administração'}
     menuAdmAvaliadores = () => {return 'a[data-testid="evaluators"]'}
-    menuAdmReacAvaliadores = () => {return 'a[data-testid="reassociate-evaluator"]'}
+    menuAdmReatAvaliadores = () => {return 'a[data-testid="reassociate-evaluator"]'}
     menuAdmConcursos = () => {return 'a[data-testid="contests-management"]'}
     menuAdmDataLiberacao = () => {return 'a[data-testid="contest-administration"]'}
     menuAdmResultados = () => {return 'a[data-testid="results"]'}
+    popupHeader = () => {return 'h3.modal-title'}
 
 } export default HomeElelements
