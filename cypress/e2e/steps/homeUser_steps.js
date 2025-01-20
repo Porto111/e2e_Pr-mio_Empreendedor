@@ -12,7 +12,7 @@ Given(/^o usuario realizou o login com credenciais validas$/, () => {
 });
 
 When(/^fechar o popup informativo$/, () => {
-	homeUserPage.fecharPopup()
+	
 });
 
 Then(/^a tela pincipal e apresentada$/, () => {
@@ -21,3 +21,20 @@ Then(/^a tela pincipal e apresentada$/, () => {
 
 
 
+// Validando tela principal
+
+Given(/^que o usuario fecha o popup informativo da tela inicial$/, () => {
+    homeUserPage.fecharPopup()
+	
+});
+
+When(/^a tela pincipal e apresentada contendo o texto "([^"]*)"$/, (titulo) => {
+	console.log(titulo);
+    homeUserPage.validarUserHome()
+	
+});
+
+Then(/^o para o regulamento em PDF "([^"]*)" está disponivel$/, (link) => {
+	console.log(link);
+	homeUserPage.pdfRegulamento()
+});

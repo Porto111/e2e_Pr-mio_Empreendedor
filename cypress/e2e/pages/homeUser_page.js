@@ -25,6 +25,10 @@ class HomeUserPage {
        cy.contains('h3' , '.modal-content > .title').should('be.visible')
     }
 
+    validarUserHome(){
+        cy.contains('h2', 'Sistema Prêmio Empreendedor').should('be.visible')
+    }
+
     fecharPopup (){
         cy.get(homeElements.closePopup()).click()
     }
@@ -76,6 +80,14 @@ class HomeUserPage {
 
     dropResultados(){
         cy.get(homeElements.menuAdmResultados()).click()
+    }
+
+    duvidaLink(){
+        cy.get(homeElements.linkDuvida()).click()
+    }
+
+    pdfRegulamento(){
+        cy.contains('a', 'Regulamento do Prêmio Empreendedor 2024').click()
     }
 
 
