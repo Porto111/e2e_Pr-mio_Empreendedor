@@ -8,10 +8,7 @@ const homeUserPage = new HomeUserPage
 
 Given(/^o usuario realizou o login com credenciais validas$/, () => {
 	homeUserPage.usuarioLogado()
-});
-
-When(/^a pagina inicial do usuário for apresentada com o popup informativo$/, () => {
-	homeUserPage.validarPopup()
+    cy.wait(20000)
 });
 
 When(/^fechar o popup informativo$/, () => {

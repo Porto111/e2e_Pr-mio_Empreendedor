@@ -1,7 +1,8 @@
 /// <reference types="Cypress"/>
+import HomeUserPage from "../pages/homeUser_page";
 import LoginPage from "../pages/login_page";
 
-
+const homeUserPage = new HomeUserPage
 const loginPage = new LoginPage
 
 Given(/^eu acesse a aplicacao Sabesp$/, () => {
@@ -21,7 +22,7 @@ When(/^clicar no botao acessar$/, () => {
 });
 
 Then(/^sou direcionado para a home logada$/, () => {
-	loginPage.closePopup()
+	homeUserPage.validarPopup()
 });
 
 

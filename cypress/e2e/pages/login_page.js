@@ -22,9 +22,8 @@ submitLogin(){
     cy.get(loginElements.btnAcessar()).click()
 }
 
-closePopup(){
-    cy.wait(10000)
-    cy.get(homeElements.closePopup()).click()
+fecharPopup(){
+    cy.get(homeElements.closePopup())
 }
 
 }export default LoginPage

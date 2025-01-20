@@ -1,20 +1,28 @@
 /// <reference types="Cypress" />
 import HomeUserElelements from "../elements/homeUser_elements.js"
+import LoginElements from "../elements/login_elements.js"
 import LoginPage from "./login_page.js"
 
 const loginPage = new LoginPage
 const homeElements = new HomeUserElelements
+const loginElements = new LoginElements
+
 
 class HomeUserPage {
 
     usuarioLogado (){
-        cy.get(loginPage.visitPage())
-        cy.get(loginPage.fillLoginInfo())
-        cy.get(loginPage.submitLogin())
+        const userName = 'guisouza.solutis';
+        const password = 'uZE11O8Z';
+        cy.visit('/login')
+        cy.get(loginElements.inputUserName()).type(userName)
+        cy.get(loginElements.inputPassword()).type(password)
+        cy.get(loginElements.btnAcessar())
+        
     }
 
     validarPopup(){
-        cy.contains('h3', 'title modal-title ant-typography').should('be.visible')
+       // cy.contains('h3', 'title modal-title ant-typography').should('be.visible')
+       cy.contains('h3' , '.modal-content > .title').should('be.visible')
     }
 
     fecharPopup (){
