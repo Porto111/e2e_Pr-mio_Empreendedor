@@ -10,16 +10,6 @@ const loginElements = new LoginElements
 
 class HomeUserPage {
 
-    usuarioLogado (){
-        const userName = 'guisouza.solutis';
-        const password = 'uZE11O8Z';
-        cy.visit('/login')
-        cy.get(loginElements.inputUserName()).type(userName)
-        cy.get(loginElements.inputPassword()).type(password)
-        cy.get(loginElements.btnAcessar())
-        
-    }
-
     validarPopup(){
        // cy.contains('h3', 'title modal-title ant-typography').should('be.visible')
        cy.contains('h3' , '.modal-content > .title').should('be.visible')
@@ -39,7 +29,6 @@ class HomeUserPage {
 
     datasImpontantes(){
         cy.get(homeElements.calendarioInfo()).click()
-        cy.get(homeElements.closePopup()).click()
     }
 
     telaConsultarTrab(){

@@ -38,3 +38,8 @@ Then(/^o para o regulamento em PDF "([^"]*)" está disponivel$/, (link) => {
 	console.log(link);
 	homeUserPage.pdfRegulamento()
 });
+
+Then(/^o para o regulamento em PDF "([^"]*)" está disponivel$/, (link) => {
+	console.log(link);
+	homeUserPage.duvidaLink()
+});
