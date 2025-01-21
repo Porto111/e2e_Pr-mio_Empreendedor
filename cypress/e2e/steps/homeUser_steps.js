@@ -43,3 +43,21 @@ Then(/^o para o regulamento em PDF "([^"]*)" está disponivel$/, (link) => {
 	console.log(link);
 	homeUserPage.duvidaLink()
 });
+
+
+Given(/^o usuario clica na mensagem 'Nao mostrar novamente' no popup de informacoes$/, () => {
+	homeUserPage.MsgPopup()
+});
+
+
+When(/^fechar o popup de informacoes$/, () => {
+	homeUserPage.fecharPopup()
+});
+
+When(/^recarregar a pagina$/, () => {
+	cy.reload
+});
+
+Then(/^o popup de informacoes é apresentado$/, () => {
+	homeUserPage.validarUserHome()
+});

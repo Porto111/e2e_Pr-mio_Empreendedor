@@ -9,6 +9,12 @@ Funcionalidade validar a pagina inicial do usuário
     Then o para o regulamento em PDF "<link>" está disponivel
 
     Examples:
-      | titulo                      | link                                                                                     |
-      | Sistema Prêmio Empreendedor | Regulamento do Prêmio Empreendedor 2024                                                  |
-      | Sistema Prêmio Empreendedor | Qualquer dúvida sobre o Prêmio Empreendedor 2024, Acesse https://ch-atende.sabesp.com.br |
+      | titulo                      | link                                             |
+      | Sistema Prêmio Empreendedor | Regulamento do Prêmio Empreendedor 2024          |
+      | Sistema Prêmio Empreendedor | Qualquer dúvida sobre o Prêmio Empreendedor 2024 |
+
+  Scenario: Ocultar popup informativo
+    Given o usuario clica na mensagem 'Nao mostrar novamente' no popup de informacoes
+    When fechar o popup de informacoes
+    And recarregar a pagina
+    Then o popup de informacoes é apresentado
