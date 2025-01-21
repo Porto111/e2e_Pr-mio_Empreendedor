@@ -10,6 +10,10 @@ const loginElements = new LoginElements
 
 class HomeUserPage {
 
+    clickBtnSair(){
+        homeElements.btnSair().click()
+    }
+
     validarPopup(){
        // cy.contains('h3', 'title modal-title ant-typography').should('be.visible')
        cy.contains('h3' , '.modal-content > .title').should('be.visible')

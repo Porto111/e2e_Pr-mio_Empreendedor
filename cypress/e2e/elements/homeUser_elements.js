@@ -16,5 +16,5 @@ class HomeElelements{
     menuAdmDataLiberacao = () => {return 'a[data-testid="contest-administration"]'}
     menuAdmResultados = () => {return 'a[data-testid="results"]'}
     popupHeader = () => {return 'h3.modal-title'}
-
+    btnSair = () => { return 'li.ant-dropdown-menu-item'}
 } export default HomeElelements

@@ -61,3 +61,25 @@ When(/^recarregar a pagina$/, () => {
 Then(/^o popup de informacoes é apresentado$/, () => {
 	homeUserPage.validarUserHome()
 });
+
+
+When(/^clicar no botão calendario$/, () => {
+	homeUserPage.datasImpontantes()
+});
+
+Then(/^o popup de informacoes é apresentado na tela$/, () => {
+	cy.wait(3000)
+	homeUserPage.fecharPopup()
+});
+
+
+
+When(/^clicar no icone 'Administrador' o botao 'sair' é apresentado$/, () => {
+	homeUserPage.menuUsuario()
+});
+
+Then(/^apos clicar no botao 'sair' e direcionado para home não logada$/, () => {
+	homeUserPage.clickBtnSair()
+	cy.contains('p', ' Para realizar o login utilize o usuário e senha da Sabesp')
+});
+

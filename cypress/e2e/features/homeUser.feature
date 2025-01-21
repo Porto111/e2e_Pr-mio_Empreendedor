@@ -18,3 +18,14 @@ Funcionalidade validar a pagina inicial do usuário
     When fechar o popup de informacoes
     And recarregar a pagina
     Then o popup de informacoes é apresentado
+
+  Scenario: Validar icone calendario para apresentação do popup de informacoes
+    Given que o usuario fecha o popup informativo da tela inicial
+    When clicar no botão calendario
+    Then o popup de informacoes é apresentado na tela
+
+  Scenario: Validar administração de usuario
+    Given o usuario clica na mensagem 'Nao mostrar novamente' no popup de informacoes
+    When fechar o popup de informacoes
+    And clicar no icone 'Administrador' o botao 'sair' é apresentado
+    Then apos clicar no botao 'sair' e direcionado para home não logada
