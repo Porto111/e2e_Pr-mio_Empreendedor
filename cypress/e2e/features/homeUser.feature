@@ -29,3 +29,27 @@ Funcionalidade validar a pagina inicial do usuário
     When fechar o popup de informacoes
     And clicar no icone 'Administrador' o botao 'sair' é apresentado
     Then apos clicar no botao 'sair' e direcionado para home não logada
+
+  Scenario: Navegar para a tela consultar trabalho
+    Given que usuario esta na tela pincipal
+    When clicar no titulo 'Consultar Trabalho'
+    Then a pagina de consultas é apresentada
+
+  Scenario: Navegar para a tela cadastrar trabalho
+    Given que usuario esta na tela pincipal
+    When clicar no titulo 'Cadastrar Trabalho'
+    Then a pagina de cadastro é apresentada
+
+
+  Scenario Outline: Validar o menu administração de concursos
+    Given que o usuario clicou no menu 'Administracao'
+    When selecionar uma das opções da "<lista>" apresentada
+    Then sera direcionado para a pagina selecionada
+
+    Examples:
+      | lista                  |
+      | Avaliadores            |
+      | Reassociar Avaliadores |
+      | Concursos              |
+      | Datas e Liberações     |
+      | Resultados             |

@@ -9,12 +9,12 @@ class HomeElelements{
     telaPrincipal = () => {return 'a[data-testid="home"]'} 
     telaConsultarTrabalho = () => {return 'a[data-testid="list-works"]'}
     telaCadastrarTrabalho = () => {return 'a[data-testid="register-work"]'}
-    administracaoMenu = () => {return 'span', 'Administração'}
-    menuAdmAvaliadores = () => {return 'a[data-testid="evaluators"]'}
+    administracaoMenu = () => {return 'div[ng-reflect-nz-title="Administração"] span'}
+    menuAdmAvaliadores = () => {return 'a[href="/avaliador"]'}
     menuAdmReatAvaliadores = () => {return 'a[data-testid="reassociate-evaluator"]'}
     menuAdmConcursos = () => {return 'a[data-testid="contests-management"]'}
     menuAdmDataLiberacao = () => {return 'a[data-testid="contest-administration"]'}
     menuAdmResultados = () => {return 'a[data-testid="results"]'}
     popupHeader = () => {return 'h3.modal-title'}
-    btnSair = () => { return 'li.ant-dropdown-menu-item'}
+    btnSair = () => { return  'li.ant-dropdown-menu-item'}
 } export default HomeElelements

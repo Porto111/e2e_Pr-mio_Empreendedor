@@ -11,7 +11,7 @@ const loginElements = new LoginElements
 class HomeUserPage {
 
     clickBtnSair(){
-        homeElements.btnSair().click()
+        cy.get(homeElements.btnSair()).click()
     }
 
     validarPopup(){
@@ -52,7 +52,11 @@ class HomeUserPage {
     }
 
     admMenuDrop(){
-        cy.get(homeElements.administracaoMenu()).click()
+        //cy.contains('span', 'Administração')
+        //cy.get('div[ng-reflect-nz-title="Administração"] span').eq(0)
+        cy.get('div[ng-reflect-mode="horizontal"] span').eq(0)
+
+       // cy.get(homeElements.administracaoMenu()).click()
     }
 
     menuDropAvaliadores(){
@@ -82,9 +86,4 @@ class HomeUserPage {
     pdfRegulamento(){
         cy.contains('a', 'Regulamento do Prêmio Empreendedor 2024').click()
     }
-
-
-
-
-
 } export default HomeUserPage

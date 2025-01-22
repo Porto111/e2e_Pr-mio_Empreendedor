@@ -83,3 +83,66 @@ Then(/^apos clicar no botao 'sair' e direcionado para home não logada$/, () => 
 	cy.contains('p', ' Para realizar o login utilize o usuário e senha da Sabesp')
 });
 
+
+
+Given(/^que usuario esta na tela pincipal$/, () => {
+	homeUserPage.fecharPopup()
+});
+
+When(/^clicar no titulo 'Consultar Trabalho'$/, () => {
+	homeUserPage.telaConsultarTrab()
+});
+
+Then(/^a pagina de consultas é apresentada$/, () => {
+	cy.contains('h3.title', 'Consultar Trabalho')
+	
+});
+
+
+When(/^clicar no titulo 'Cadastrar Trabalho'$/, () => {
+	homeUserPage.telaCadTrabalho()
+});
+
+Then(/^a pagina de cadastro é apresentada$/, () => {
+	cy.contains('div.ant-result-title', 'No momento, não há categorias disponíveis.')
+});
+
+
+Given(/^que o usuario clicou no menu 'Administracao'$/, () => {
+	homeUserPage.fecharPopup()
+	homeUserPage.admMenuDrop()
+});
+
+
+When(/^selecionar uma das opções da "([^"]*)" apresentada$/, async (lista) => {
+    console.log(lista);
+ 
+    // Mapeamento das listas para suas respectivas ações
+    const acoesPorLista = {
+        "Avaliadores": [
+            () => this.homeUserPage.menuDropAvaliadores(),
+            () => this.homeUserPage.dropReassociarAvalaliadores(),
+        ],
+        "Concursos": [
+            () => this.homeUserPage.menuDropConcursos(),
+            () => this.homeUserPage.dropAdmDataLiberacao(),
+        ],
+        "Resultados": [
+            () => this.homeUserPage.dropResultados(),
+        ],
+    };
+
+	// Verifica se a lista recebida existe no mapeamento
+    if (acoesPorLista[lista]) {
+        // Executa todas as ações correspondentes à lista
+        for (const acao of acoesPorLista[lista]) {
+            await acao();
+        }
+    } else {
+        console.error(`A lista "${lista}" não está mapeada.`);
+    }
+});
+
+Then(/^sera direcionado para a pagina selecionada$/, () => {
+	
+});
