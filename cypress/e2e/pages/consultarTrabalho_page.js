@@ -12,8 +12,9 @@ const consultarTrabalho = new ConsultarTrabalhoElements
 class ConsultarTrabalhoPage {
 
     pesquisarTrabalho(){
-        cy.get(consultarTrabalho.pesquisarTrabalho()).click()
-        cy.get(consultarTrabalho.pesquisarTrabalho()).type('')
+        cy.get(consultarTrabalho.pesquisarTrabalho()).click() 
+        cy.get('manage-form-grid > .filter > .search-input-wrapper > .ant-input-affix-wrapper > .ant-input').type('hhhhh')
+        cy.get('.search-input-wrapper > .ant-input-affix-wrapper > .ant-input-suffix > .anticon > svg').click() 
     }
 
     btnProxPagina(){

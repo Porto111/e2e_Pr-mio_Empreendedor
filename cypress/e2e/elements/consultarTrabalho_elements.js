@@ -1,5 +1,5 @@
 class ConsultarTrabalhoElements {
-    pesquisarTrabalho = () => {return 'input[placeholder="Pesquisar"]'}
+    pesquisarTrabalho = () => {return 'input.ant-input'}
     ordenarInscricao = () => {return 'nz-table-sorters[ng-reflect-sort-directions="ascend,descend,"] span'.eq(0)}
     ordenarTitulo = () => {return 'span.ant-table-column-title'.eq(1)}
     ordenarTematica = () => {return 'span.ant-table-column-title'.eq(2)}
@@ -11,3 +11,5 @@ class ConsultarTrabalhoElements {
     defineQuantidadeDeItemApresentados = () => {return 'nz-select-item[ng-reflect-deletable="false"]'}
 
 } export default ConsultarTrabalhoElements
+
+
