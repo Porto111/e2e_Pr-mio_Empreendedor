@@ -131,16 +131,6 @@ When(/^selecionar uma das opções da "([^"]*)" apresentada$/, async (lista) => 
             () => this.homeUserPage.dropResultados(),
         ],
     };
-
-	// Verifica se a lista recebida existe no mapeamento
-    if (acoesPorLista[lista]) {
-        // Executa todas as ações correspondentes à lista
-        for (const acao of acoesPorLista[lista]) {
-            await acao();
-        }
-    } else {
-        console.error(`A lista "${lista}" não está mapeada.`);
-    }
 });
 
 Then(/^sera direcionado para a pagina selecionada$/, () => {

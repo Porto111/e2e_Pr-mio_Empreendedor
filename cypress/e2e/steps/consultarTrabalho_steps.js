@@ -32,3 +32,29 @@ Then(/^deve retornar a lista em branco com mensagem 'Não há dados'$/, () => {
 });
 
 
+When(/^clicar no titulo das "([^"]*)" da lista de trabalho$/, async (colunas) => {
+	console.log(colunas);
+
+    // Mapeamento das listas para suas respectivas ações
+    const acoesPorColunas = {
+        "Inscrição": [
+            () => this.consultarTrabalhoPage.classTrabalhoInscricao()
+        ],
+        "Título": [
+            () => this.consultarTrabalhoPage.classTrabalhoTitulo()
+        ],
+        "Temática": [
+            () => this.consultarTrabalhoPage.classTrabalhoTematica()
+        ],
+        "Categoria": [
+            () => this.consultarTrabalhoPage.classTrabalhoCategoria()
+        ],
+        "Status": [
+            () => this.consultarTrabalhoPage.classTrabalhoStatus()
+        ],
+    };
+});
+
+Then(/^a lista é apresentada de acrodo com o filtro utlizado$/, () => {
+	
+});
