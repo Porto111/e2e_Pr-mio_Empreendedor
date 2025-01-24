@@ -31,7 +31,7 @@ Usuario autenticado como administrador na plataforma, acessando o menu 'Administ
     And clicar no botão 'Salvar alterações'
     Then a mensagem 'Campo obrigatório!' é apresentada
 
-  Scenario: Cadastrar categoria de concurso com 'periodo de realização' vazio
+  Scenario: Cadastrar categoria um concurso com 'periodo de realização' vazio
     Given que o usuário está na tela de cadastro de categoria
     When preencher o 'titul'o, não preencher o 'periodo de realização' da nova categoria
     And clicar no botão 'Salvar alterações'

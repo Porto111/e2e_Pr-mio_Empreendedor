@@ -52,11 +52,11 @@ class HomeUserPage {
     }
 
     admMenuDrop(){
+        cy.get(selectAdminSpan()).click();
         //cy.contains('span', 'Administração')
         //cy.get('div[ng-reflect-nz-title="Administração"] span').eq(0)
-        cy.get('div[ng-reflect-mode="horizontal"] span').eq(0)
-
-       // cy.get(homeElements.administracaoMenu()).click()
+        //cy.get('div[ng-reflect-mode="horizontal"] span').eq(0).click()
+        //cy.get(homeElements.administracaoMenu()).click()
     }
 
     menuDropAvaliadores(){
@@ -64,7 +64,8 @@ class HomeUserPage {
     }
 
     menuDropConcursos(){
-        cy.get(homeElements.menuAdmConcursos()).click()
+        //cy.get(homeElements.menuAdmConcursos()).click()
+        cy.contains('a', 'Concursos').click()
     }
 
     dropReassociarAvalaliadores(){

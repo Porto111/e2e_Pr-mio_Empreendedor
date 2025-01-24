@@ -12,9 +12,12 @@ class HomeElelements{
     administracaoMenu = () => {return 'div[ng-reflect-nz-title="Administração"] span'}
     menuAdmAvaliadores = () => {return 'a[href="/avaliador"]'}
     menuAdmReatAvaliadores = () => {return 'a[data-testid="reassociate-evaluator"]'}
-    menuAdmConcursos = () => {return 'a[data-testid="contests-management"]'}
+    menuAdmConcursos = () => {return 'a[ng-reflect-router-link="/,concursos"]'}
     menuAdmDataLiberacao = () => {return 'a[data-testid="contest-administration"]'}
     menuAdmResultados = () => {return 'a[data-testid="results"]'}
     popupHeader = () => {return 'h3.modal-title'}
     btnSair = () => { return  'li.ant-dropdown-menu-item'}
+    
 } export default HomeElelements
+ 
+
