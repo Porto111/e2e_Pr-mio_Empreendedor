@@ -6,5 +6,6 @@ inputDataInicioNvCat = () => {return 'input[placeholder="Data inicial"]'}
 inputDataFimNvCat = () => {return 'input[placeholder="Data final"]'}
 btnSalvarCat = () => {return 'button[type="submit"]'}
 btnVoltar = () => {return 'div[ng-reflect-modal-ref="[object Object]"] button'.eq(0)}
+
 } export default CadCategoriaConcursoElements
 

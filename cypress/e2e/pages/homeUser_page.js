@@ -23,7 +23,7 @@ class HomeUserPage {
         cy.contains('h2', 'Sistema Prêmio Empreendedor').should('be.visible')
     }
 
-    fecharPopup (){
+    fecharPopup(){
         cy.get(homeElements.closePopup()).click()
     }
 
