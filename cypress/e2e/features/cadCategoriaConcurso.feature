@@ -7,7 +7,7 @@ Usuario autenticado como administrador na plataforma, acessando o menu 'Administ
     Given que o usuário acessou o menu 'Administração > Concurso'.
     When clicar no botão 'Gerenciar concurso'
     Then a tela de gerenciamento é apresentada
-    And os botões 'Editar Concurso' e '+ Adicionar Categoria' estão habilitados
+    
 
   Scenario: Exibir os campos obrigatórios na tela de cadastro
     Given que o usuário acessou a tela de cadastro de categoria

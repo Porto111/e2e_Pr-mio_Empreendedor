@@ -52,8 +52,8 @@ class HomeUserPage {
     }
 
     admMenuDrop(){
-        cy.get(selectAdminSpan()).click();
-        //cy.contains('span', 'Administração')
+        
+        cy.contains('span', 'Administração').click()
         //cy.get('div[ng-reflect-nz-title="Administração"] span').eq(0)
         //cy.get('div[ng-reflect-mode="horizontal"] span').eq(0).click()
         //cy.get(homeElements.administracaoMenu()).click()
@@ -66,6 +66,7 @@ class HomeUserPage {
     menuDropConcursos(){
         //cy.get(homeElements.menuAdmConcursos()).click()
         cy.contains('a', 'Concursos').click()
+        cy.wait(5000)
     }
 
     dropReassociarAvalaliadores(){
