@@ -48,7 +48,7 @@ class CadCategoriaConcursoPage {
     }
 
     botaoPesqConcurso(){
-        cy.get(cadCategoriaConcurso.btnPesqConcurso()).type('Teste Porto').click()
+        cy.get(cadCategoriaConcurso.btnPesqConcurso()).type('Concurso H').click()
     }
 
 

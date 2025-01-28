@@ -45,17 +45,15 @@ Given(/^que o usuário está na tela de cadastro de categoria$/, () => {
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
-    //cadCategoriaConcurso.btnGerenciarConcurso()
-    cy.wait(3000)
 });
 
 
 When(/^preencher o titulo e o periodo de realização da nova categoria$/, () => {
-	cadCategoriaConcurso.botaoPesqConcurso()
+	cy.wait(1500)
+    cadCategoriaConcurso.botaoPesqConcurso()
+    cy.wait(1500)
+    cy.get('svg[data-icon="edit"]').click()
     //cadCategoriaConcurso.btnGerenciarConcurso()
-    cy.wait(2000)
-    cadCategoriaConcurso.btnGerenciarConcurso()
-    //cy.get('button[ng-reflect-title="Gerenciar Concurso"]').click()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
     cadCategoriaConcurso.categoriaDataInicio()
@@ -84,10 +82,10 @@ Then(/^nenhuma alteração é realizada e a tela de listagem de categorias é ap
 
 
 When(/^preencher o periodo de realização, não preencher o titulo da nova categoria$/, () => {
-	cadCategoriaConcurso.botaoPesqConcurso()
-    //cadCategoriaConcurso.btnGerenciarConcurso()
-    cy.wait(2000)
-    cy.get('button[ng-reflect-title="Gerenciar Concurso"]').click()
+	cy.wait(1500)
+    cadCategoriaConcurso.botaoPesqConcurso()
+    cy.wait(1500)
+    cadCategoriaConcurso.btnGerenciarConcurso()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.categoriaDataInicio()
     cadCategoriaConcurso.categoriaDataFim()
@@ -104,10 +102,10 @@ Then(/^a mensagem 'Campo obrigatório!' é apresentada$/, () => {
 
 
 When(/^preencher o 'titul'o, não preencher o 'periodo de realização' da nova categoria$/, () => {
-	cadCategoriaConcurso.botaoPesqConcurso()
-    //cadCategoriaConcurso.btnGerenciarConcurso()
-    cy.wait(2000)
-    cy.get('button[ng-reflect-title="Gerenciar Concurso"]').click()
+	cy.wait(1500)
+    cadCategoriaConcurso.botaoPesqConcurso()
+    cy.wait(1500)
+    cadCategoriaConcurso.btnGerenciarConcurso()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
 });
@@ -136,6 +134,7 @@ When(/^o usuário tenta cadastrar a categoria$/, () => {
 });
 
 Then(/^o sistema exibe uma mensagem de erro informando que não é possível vincular uma categoria a um concurso em vigência$/, () => {
+    cy.wait(3000)
 	cy.contains('font', 'Não foi possível adicionar a categoria informada. Tente novamente mais tarde.').eq(1)
 });
 
