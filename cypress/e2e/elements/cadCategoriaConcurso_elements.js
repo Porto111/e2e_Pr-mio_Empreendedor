@@ -1,11 +1,11 @@
 class CadCategoriaConcursoElements{
-btnEditarConc = () => { return 'app-manage-contest-section > .ant-page-header > .ant-page-header-heading > .ant-page-header-heading-extra > .ant-btn' }
-btnAdcCategoria = () => {return 'app-manage-contest-categories-section > .ant-page-header > .ant-page-header-heading > .ant-page-header-heading-extra > .ant-btn'}
+btnEditarConc = () => { return 'font', 'Editar Concurso'.eq(1) }
+btnAdcCategoria = () => {return 'font', 'Adicionar Nova Categoria'.eq(1)}
 inputTitulo = () => {return 'input[formcontrolname="categoryName"]'}
-inputDataInicioNvCat = () => {return 'input[placeholder="Dados iniciais"]'}
-inputDataFimNvCat = () => {return 'input[placeholder="Dados finais"]'}
-btnSalvarCat = () => {return 'button[type="submit"]'}
-btnVoltar = () => {return 'div[ng-reflect-modal-ref="[object Object]"] button'.eq(0)}
+inputDataInicioNvCat = () => {return 'input[placeholder="Data inicial"]'}
+inputDataFimNvCat = () => {return 'input[placeholder="Data final"]'}
+btnSalvarCat = () => {return 'font', 'Salvar Alterações'.eq(1)}
+btnVoltar = () => {return 'font', 'Voltar'.eq(1)}
 btnVisualizar = () => {return ':nth-child(1) > :nth-child(5) > .ant-btn-group > [ng-reflect-disabled="false"] > .anticon'}
 btnPesqConcurso = () => {return 'input[placeholder*="Exemplo: Prêmio Empreendedor "]' }
 } export default CadCategoriaConcursoElements

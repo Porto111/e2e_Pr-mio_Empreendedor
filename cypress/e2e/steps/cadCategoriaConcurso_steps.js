@@ -49,15 +49,15 @@ Given(/^que o usuário está na tela de cadastro de categoria$/, () => {
 
 
 When(/^preencher o titulo e o periodo de realização da nova categoria$/, () => {
-	cy.wait(1500)
-    cadCategoriaConcurso.botaoPesqConcurso()
-    cy.wait(1500)
-    cy.get('svg[data-icon="edit"]').click()
-    //cadCategoriaConcurso.btnGerenciarConcurso()
+    homeUserPage.admMenuDrop()
+    cy.wait(3000)
+    homeUserPage.menuDropConcursos()
+    cadCategoriaConcurso.btnGerenciarConcurso()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
     cadCategoriaConcurso.categoriaDataInicio()
     cadCategoriaConcurso.categoriaDataFim()
+
 });
 
 When(/^clicar no botão 'Salvar alterações'$/, () => {
