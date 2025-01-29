@@ -18,7 +18,7 @@ module.exports = defineConfig({
       video: true,
       overwrite: true, 
       html: true, 
-      json: false, 
+      json: true, 
       timestamp: "yyyy-mm-dd_HH-MM-ss", 
     },
     },
