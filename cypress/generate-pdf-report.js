@@ -5,7 +5,7 @@ const fs = require('fs');
   const puppeteer = require('puppeteer');
 
   async function generatePDFReport() {
-    const reportDir = path.join('C:/Users/guilherme.souza/Desktop/Automaçõesdeteste/e2e_Prêmio_Empreendedor/', 'cypress/generate-pdf-report.js');
+    const reportDir = path.join('C:/Users/guilherme.souza/Desktop/Automações_de_teste/e2e_Prêmio_Empreendedor', 'cypress/generate-pdf-report.js');
     const jsonReport = await merge({ files: [path.join(reportDir, '*.json')] });
     const htmlReport = await generator.create(jsonReport, { inline: true });
 
