@@ -16,9 +16,9 @@ module.exports = defineConfig({
     reporterOptions: {
       reportDir: "cypress/reports", 
       video: true,
-      overwrite: false, 
+      overwrite: true, 
       html: true, 
-      json: true, 
+      json: false, 
       timestamp: "yyyy-mm-dd_HH-MM-ss", 
     },
     },

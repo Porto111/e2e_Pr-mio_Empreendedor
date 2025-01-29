@@ -4,7 +4,9 @@
   "description": "#TDB.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cypress run",
+      "generate-report": "node .cypress/reports/generate-pdf-report.js"
   },
   "author": "Guilherme Porto",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "step_definitions": "cypress/e2e/steps"
   },
   "dependencies": {
-    "cucumber": "^6.0.7"
+    "cucumber": "^6.0.7",
+    "puppeteer": "^24.1.1"
   }
 }
