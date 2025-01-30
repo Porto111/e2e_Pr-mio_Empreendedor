@@ -14,7 +14,7 @@ beforeEach(() => {
       loginPage.fillLoginInfo('guisouza.solutis', 'uZE11O8Z');
       loginPage.submitLogin();
       cy.wait(5000);
-      homeUserPage.fecharPopup()
+     // homeUserPage.fecharPopup()
 
     }
   });

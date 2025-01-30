@@ -8,7 +8,7 @@ const cadCategoriaConcurso = new CadCategoriaConcursoPage
 
 
 Given(/^que o usuário acessou o menu 'Administração > Concurso'.$/, () => {
-	//homeUserPage.fecharPopup()
+	homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
@@ -27,7 +27,7 @@ Then(/^a tela de gerenciamento é apresentada$/, () => {
 
 
 Given(/^que o usuário acessou a tela de cadastro de categoria$/, () => {
-	//homeUserPage.fecharPopup()
+	homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
@@ -41,7 +41,7 @@ Then(/^a tela deve exibir os campos 'Título', 'Periodo de Realização' e os bo
 
 
 Given(/^que o usuário está na tela de cadastro de categoria$/, () => {
-	//homeUserPage.fecharPopup()
+	homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(1500)
     homeUserPage.menuDropConcursos()
@@ -60,7 +60,7 @@ When(/^preencher o titulo e o periodo de realização da nova categoria$/, () =>
 });
 
 When(/^clicar no botão 'Salvar alterações'$/, () => {
-	//cadCategoriaConcurso.submitNvCategoria()
+	cadCategoriaConcurso.submitNvCategoria()
     cy.get('button[type="submit"]').click()
 });
 
@@ -72,7 +72,6 @@ Then(/^a nova categoria é adicionada corretamente$/, () => {
 When(/^clicar no botão 'Voltar'$/, () => {
     cy.get('.ant-modal-content > .ant-modal-body > .ng-star-inserted > #edit-contest-form > .ant-row:nth-child(2)').click()
 	cadCategoriaConcurso.submitBtnVoltar()
-    //cy.contains('span', ' Voltar ').click()
 });
 
 Then(/^nenhuma alteração é realizada e a tela de listagem de categorias é apresentada$/, () => {
@@ -119,7 +118,7 @@ Then(/^a mensagem 'Campo obrigatório!' é apresentada$/, () => {
 
 
 Given(/^que o concurso selecionado está no período de vigência$/, () => {
-	//homeUserPage.fecharPopup()
+	homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
