@@ -1,6 +1,8 @@
 /// <reference types="Cypress" />
 import LoginPage from "../e2e/pages/login_page";
+import HomeUserPage from "../e2e/pages/homeUser_page";
 
+const homeUserPage = new HomeUserPage();
 const loginPage = new LoginPage();
 
 beforeEach(() => {
@@ -12,6 +14,8 @@ beforeEach(() => {
       loginPage.fillLoginInfo('guisouza.solutis', 'uZE11O8Z');
       loginPage.submitLogin();
       cy.wait(5000);
+      homeUserPage.fecharPopup()
+
     }
   });
 });

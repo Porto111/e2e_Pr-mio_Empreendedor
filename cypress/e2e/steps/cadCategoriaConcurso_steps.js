@@ -8,7 +8,7 @@ const cadCategoriaConcurso = new CadCategoriaConcursoPage
 
 
 Given(/^que o usuário acessou o menu 'Administração > Concurso'.$/, () => {
-	homeUserPage.fecharPopup()
+	//homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
@@ -27,7 +27,7 @@ Then(/^a tela de gerenciamento é apresentada$/, () => {
 
 
 Given(/^que o usuário acessou a tela de cadastro de categoria$/, () => {
-	homeUserPage.fecharPopup()
+	//homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
@@ -41,18 +41,17 @@ Then(/^a tela deve exibir os campos 'Título', 'Periodo de Realização' e os bo
 
 
 Given(/^que o usuário está na tela de cadastro de categoria$/, () => {
-	homeUserPage.fecharPopup()
+	//homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
-    cy.wait(3000)
+    cy.wait(1500)
     homeUserPage.menuDropConcursos()
+    
 });
 
 
 When(/^preencher o titulo e o periodo de realização da nova categoria$/, () => {
-    homeUserPage.admMenuDrop()
-    cy.wait(3000)
-    homeUserPage.menuDropConcursos()
     cadCategoriaConcurso.btnGerenciarConcurso()
+    cy.wait(2000)
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
     cadCategoriaConcurso.categoriaDataInicio()
@@ -71,8 +70,9 @@ Then(/^a nova categoria é adicionada corretamente$/, () => {
 
 
 When(/^clicar no botão 'Voltar'$/, () => {
-	//cadCategoriaConcurso.submitBtnVoltar()
-    cy.contains('span', ' Voltar ').click()
+    cy.get('.ant-modal-content > .ant-modal-body > .ng-star-inserted > #edit-contest-form > .ant-row:nth-child(2)').click()
+	cadCategoriaConcurso.submitBtnVoltar()
+    //cy.contains('span', ' Voltar ').click()
 });
 
 Then(/^nenhuma alteração é realizada e a tela de listagem de categorias é apresentada$/, () => {
@@ -85,10 +85,11 @@ When(/^preencher o periodo de realização, não preencher o titulo da nova cate
 	cy.wait(1500)
     cadCategoriaConcurso.botaoPesqConcurso()
     cy.wait(1500)
-    cadCategoriaConcurso.btnGerenciarConcurso()
+    cadCategoriaConcurso.btnGerenciarConcursoFiltrado()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.categoriaDataInicio()
     cadCategoriaConcurso.categoriaDataFim()
+    
 });
 
 When(/^clicar no botão 'Salvar alterações'$/, () => {
@@ -105,7 +106,7 @@ When(/^preencher o 'titul'o, não preencher o 'periodo de realização' da nova 
 	cy.wait(1500)
     cadCategoriaConcurso.botaoPesqConcurso()
     cy.wait(1500)
-    cadCategoriaConcurso.btnGerenciarConcurso()
+    cadCategoriaConcurso.btnGerenciarConcursoFiltrado()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
 });
@@ -118,7 +119,7 @@ Then(/^a mensagem 'Campo obrigatório!' é apresentada$/, () => {
 
 
 Given(/^que o concurso selecionado está no período de vigência$/, () => {
-	homeUserPage.fecharPopup()
+	//homeUserPage.fecharPopup()
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
@@ -134,7 +135,7 @@ When(/^o usuário tenta cadastrar a categoria$/, () => {
 });
 
 Then(/^o sistema exibe uma mensagem de erro informando que não é possível vincular uma categoria a um concurso em vigência$/, () => {
-    cy.wait(3000)
-	cy.contains('font', 'Não foi possível adicionar a categoria informada. Tente novamente mais tarde.').eq(1)
+    
+	cy.contains('font', 'Não foi possível adicionar a categoria informada. Tente novamente mais tarde.')
 });
 
