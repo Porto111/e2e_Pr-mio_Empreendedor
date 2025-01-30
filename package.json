@@ -4,9 +4,8 @@
   "description": "#TDB.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "test": "cypress run",
-      "generate-report": "node .cypress/generate-pdf-report.js"
+    "generate-report": "node generate-pdf-report.js"
   },
   "author": "Guilherme Porto",
   "license": "ISC",
@@ -22,6 +21,7 @@
   },
   "dependencies": {
     "cucumber": "^6.0.7",
+    "mochawesome-merge": "^4.4.1",
     "puppeteer": "^24.1.1"
   }
 }
