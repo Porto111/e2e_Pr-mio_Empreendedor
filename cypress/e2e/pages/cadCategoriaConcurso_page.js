@@ -46,11 +46,12 @@ class CadCategoriaConcursoPage {
     }
 
     submitBtnVoltar(){
+        cy.get('.ant-modal-content > .ant-modal-body > .ng-star-inserted > #edit-contest-form > .ant-row:nth-child(2)').click()
         cy.get(cadCategoriaConcurso.btnVoltar()).click()
     }
 
     botaoPesqConcurso(){
-        cy.get(cadCategoriaConcurso.btnPesqConcurso()).type('Concurso H').click()
+        cy.get(cadCategoriaConcurso.btnPesqConcurso()).type('Concurso D').click()
     }
 
 

@@ -50,8 +50,12 @@ Given(/^que o usuário está na tela de cadastro de categoria$/, () => {
 
 
 When(/^preencher o titulo e o periodo de realização da nova categoria$/, () => {
-    cadCategoriaConcurso.btnGerenciarConcurso()
-    cy.wait(2000)
+    //cadCategoriaConcurso.btnGerenciarConcurso()
+    //cy.wait(2000)
+    cy.wait(1500)
+    cadCategoriaConcurso.botaoPesqConcurso()
+    cy.wait(3000)
+    cadCategoriaConcurso.btnGerenciarConcursoFiltrado()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
     cadCategoriaConcurso.categoriaDataInicio()
@@ -61,7 +65,7 @@ When(/^preencher o titulo e o periodo de realização da nova categoria$/, () =>
 
 When(/^clicar no botão 'Salvar alterações'$/, () => {
 	cadCategoriaConcurso.submitNvCategoria()
-    cy.get('button[type="submit"]').click()
+    //cy.get('button[type="submit"]').click()
 });
 
 Then(/^a nova categoria é adicionada corretamente$/, () => {
@@ -70,7 +74,6 @@ Then(/^a nova categoria é adicionada corretamente$/, () => {
 
 
 When(/^clicar no botão 'Voltar'$/, () => {
-    cy.get('.ant-modal-content > .ant-modal-body > .ng-star-inserted > #edit-contest-form > .ant-row:nth-child(2)').click()
 	cadCategoriaConcurso.submitBtnVoltar()
 });
 
@@ -83,7 +86,7 @@ Then(/^nenhuma alteração é realizada e a tela de listagem de categorias é ap
 When(/^preencher o periodo de realização, não preencher o titulo da nova categoria$/, () => {
 	cy.wait(1500)
     cadCategoriaConcurso.botaoPesqConcurso()
-    cy.wait(1500)
+    cy.wait(3000)
     cadCategoriaConcurso.btnGerenciarConcursoFiltrado()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.categoriaDataInicio()
