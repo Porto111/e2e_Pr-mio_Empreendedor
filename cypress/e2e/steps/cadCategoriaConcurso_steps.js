@@ -125,14 +125,17 @@ Given(/^que o concurso selecionado está no período de vigência$/, () => {
     homeUserPage.admMenuDrop()
     cy.wait(3000)
     homeUserPage.menuDropConcursos()
-    cadCategoriaConcurso.btnGerenciarConcurso()
+    //cadCategoriaConcurso.btnGerenciarConcurso()
+    cy.get('input[placeholder*="Exemplo: Prêmio Empreendedor "]').type('GuilhermeTts')
+    cy.wait(1500)
+    cadCategoriaConcurso.btnGerenciarConcursoFiltrado()
     cy.contains('span', ' Adicionar Nova Categoria ').click()
     cadCategoriaConcurso.novaCategoriaTitulo()
     cadCategoriaConcurso.categoriaDataInicio()
     cadCategoriaConcurso.categoriaDataFim()
 });
 
-When(/^o usuário tenta cadastrar a categoria$/, () => {
+When(/^o usuário tentar cadastrar a categoria$/, () => {
 	cy.get('button[type="submit"]').click()
 });
 

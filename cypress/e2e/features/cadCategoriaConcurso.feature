@@ -39,5 +39,5 @@ Usuario autenticado como administrador na plataforma, acessando o menu 'Administ
 
   Scenario: Impedir a vinculação de categoria a concurso em vigência
     Given que o concurso selecionado está no período de vigência
-    When o usuário tenta cadastrar a categoria
+    When o usuário tentar cadastrar a categoria
     Then o sistema exibe uma mensagem de erro informando que não é possível vincular uma categoria a um concurso em vigência
