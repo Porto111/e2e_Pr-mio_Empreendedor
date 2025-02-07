@@ -34,10 +34,14 @@ Neste projeto, você pode executar testes nos modos interativo e headless, tanto
 
 ### Modo headless
 
-Execute `npm test` (ou `npm t` para abreviar) para executar todos os testes no modo headless usando uma viewport de desktop.
+Execute `npx run generate-pdf-report.js` para gerar o relatório pós-execução em PDF.
 
-Execute `npm run test:tablet` para executar os testes apropriados no modo headless usando uma viewport de tablet.
+Execute `npx cypress run`  para gerar o relatório pós-execução em HTML e JSON.
 
+
+### Modo interativo
+
+Execute `npx cypress open`  para iniciar o Cypress no modo interativo.
 ---
 
 Feito com ❤️ por [Porto111](<(https://github.com/Porto111)>).
